@@ -1,0 +1,23 @@
+{
+  "name": "pizza_js",
+  "version": "1.0.0",
+  "description": "Pizza exercise",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarkWebDeveloper/JS-Pizza.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MarkWebDeveloper/JS-Pizza/issues"
+  },
+  "homepage": "https://github.com/MarkWebDeveloper/JS-Pizza#readme",
+  "type": "module",
+  "devDependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}
