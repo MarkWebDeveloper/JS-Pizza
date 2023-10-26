@@ -1,22 +1,21 @@
-import promptSync from 'prompt-sync';
+// import promptSync from 'prompt-sync';
+import { pizzas } from './pizzas.js';
 
-let pizzaQuestion = prompt('¿Qué pizza te gustaría pedir?');
+// let pizzaQuestion = prompt('¿Qué pizza te gustaría pedir?');
 
-let tomate = "tomate"
-let queso = "queso mozzarella"
-let masa = "masa"
-let oregano = "orégano"
-let salsa = "la salsa de tomate"
-let peperoni = "peperoni"
-let jamon = "jamón york"
-let champinones = "champiñones"
 let sal = "una pizca de sal"
 
-let listaIngredientes = [salsa, jamon, champinones, queso, peperoni, oregano]
+let selectedPizzaObj = pizzas.find(pizzas => pizzas.name === "mediterranea");
+let selectedPizzaName = Object.values(selectedPizzaObj)[0];
+let selectedPizzaIngs = Object.values(selectedPizzaObj)[1];
 
-function app() {
-    comprarIngredientes(tomate + ",", queso + ",", masa + ",", oregano + ",", peperoni + ",", jamon 
-    + ",", champinones)
+console.log(selectedPizzaName)
+console.log(selectedPizzaIngs)
+
+export function makeSelectedPizza(pizza) {
+    pizza = selectedPizzaName
+    thankYou()
+    comprarIngredientes(selectedPizzaIngs[0] + ",", selectedPizzaIngs[1] + ",", selectedPizzaIngs[2] + ",", selectedPizzaIngs[3] + ",", selectedPizzaIngs[4] + ",", selectedPizzaIngs[5] + ",", selectedPizzaIngs[6] + ",", selectedPizzaIngs[7])
     buscarFuente()
     encenderHorno()
     extenderMasa()
@@ -26,23 +25,28 @@ function app() {
     cocinar()
     reposar()
     cortar()
+    entregar()
     comer()
 }
 
-function comprarIngredientes(ing1, ing2, ing3, ing4, ing5, ing6, ing7) {
-    console.log("Ir a la tienda y comprar:", ing1, ing2, ing3, ing4, ing5, ing6, ing7)
+function thankYou() {
+    console.log(`¡Gracias por elejir nuestra pizza ${selectedPizzaName}!`)
+}
+
+function comprarIngredientes(ing1, ing2, ing3, ing4, ing5, ing6) {
+    console.log("Vamos a la tienda a comprar:", ing1, ing2, ing3, ing4, ing5, ing6)
 }
 
 function buscarFuente(){
-    console.log("Buscar fuente del tamaño correcto")
+    console.log("Buscamos fuente del tamaño correcto")
 }
 
 function encenderHorno(){
-    console.log("Precalentar el horno a 180 grados durante 10 min")
+    console.log("Precalentamos el horno a 180 grados durante 10 min")
 }
 
 function extenderMasa(){
-    console.log("Extender una capa de harina sobre la mesa y extender la " + masa + " con un rodillo de cocina")  
+    console.log("Extendemos una capa de harina sobre la mesa y extender la " + selectedPizzaIngs[6] + " con un rodillo de cocina")  
 }
 
 function hacerSalsa (){
@@ -52,40 +56,44 @@ function hacerSalsa (){
 }
 
 function triturarTomate (){
-    console.log("Triturar con un rayador el " + tomate)
+    console.log("Trituramos con un rayador el " + selectedPizzaIngs[7])
 }
 function freirTomate(){
-    console.log("A fuego medio añadir el " + tomate + " a una sartén")
+    console.log("A fuego medio añadimos el " + selectedPizzaIngs[7] + " a una sartén")
 }
 
 function añadirAditivos(){
-    console.log("Añadir " + sal)
+    console.log("Añadimos " + sal)
 }
 function colocarEnLaFuente() {
-    console.log("Poner en la fuente la " + masa)
+    console.log("Ponemos en la fuente la " + selectedPizzaIngs[6])
 }
 
 function anadirIngredientes(){
-    for (let x = 0; x < listaIngredientes.length; x=x+1) {
-        console.log("Poner " + listaIngredientes[x])
+    for (let x = 0; x < selectedPizzaIngs.length; x=x+1) {
+        console.log("Añadimos " + selectedPizzaIngs[x])
     }
 }
 
 function cocinar(){
-    console.log("Meter la pizza en el horno durante 15 min")
+    console.log("Metemos la pizza en el horno durante 15 min")
 }
 
 function reposar(){
-    console.log("Dejar enfriar la pizza durante 5 minutos")
+    console.log("Dejamos enfriar la pizza durante 5 minutos")
 }
 
 function cortar(){
-    console.log("Cortar la pizza en 8 piezas")
+    console.log("Cortamos la pizza en 8 piezas")
+}
+
+function entregar() {
+    console.log("Le entregamos su pizza")
 }
 
 function comer(){
-    console.log("Comer y disfrutar")
+    console.log("¡Coma y disfrute!")
 }
 
-app()
+makeSelectedPizza()
 

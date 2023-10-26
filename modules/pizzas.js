@@ -1,6 +1,6 @@
 export const pizzas = [
     {
-        name: "mediterranean",
-        ingredients: ["salsa", "jamon", "champinones", "queso", "peperoni", "oregano"]
+        name: "mediterranea",
+        ingredients: ["salsa de tomate", "jamon york", "champinones", "queso mozzarela", "peperoni", "orégano", "masa", "tomate"]
     }
 ];
