@@ -5,12 +5,12 @@ import { pizzas } from './pizzas.js';
 
 let sal = "una pizca de sal"
 
-let selectedPizzaObj = pizzas.find(pizzas => pizzas.name === "mediterranea");
+let selectedPizzaObj = pizzas.find(pizzas => pizzas.name);
 let selectedPizzaName = Object.values(selectedPizzaObj)[0];
 let selectedPizzaIngs = Object.values(selectedPizzaObj)[1];
 
-console.log(selectedPizzaName)
-console.log(selectedPizzaIngs)
+// console.log(selectedPizzaName)
+// console.log(selectedPizzaIngs)
 
 export function makeSelectedPizza(pizza) {
     pizza = selectedPizzaName
@@ -95,5 +95,5 @@ function comer(){
     console.log("¡Coma y disfrute!")
 }
 
-makeSelectedPizza()
+// makeSelectedPizza()
 
