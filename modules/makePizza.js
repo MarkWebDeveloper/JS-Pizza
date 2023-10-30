@@ -1,28 +1,26 @@
 // import promptSync from 'prompt-sync';
 import { pizzas } from './pizzas.js';
+import { pizzaName } from '../app.js';
+import { PizzaIngs } from '../app.js';
 
 // let pizzaQuestion = prompt('¿Qué pizza te gustaría pedir?');
 
-let sal = "una pizca de sal"
-
-let selectedPizzaObj = pizzas.find(pizzas => pizzas.name);
-let selectedPizzaName = Object.values(selectedPizzaObj)[0];
-let selectedPizzaIngs = Object.values(selectedPizzaObj)[1];
+// let selectedPizzaObj = pizzas.find(pizzas => pizzas.name);
+// let selectedPizzaName = Object.values(selectedPizzaObj)[0];
 
 // console.log(selectedPizzaName)
 // console.log(selectedPizzaIngs)
 
+// https://www.geeksforgeeks.org/how-to-create-an-array-using-intersection-of-two-arrays-in-javascript/?ref=ml_lbp
+
 export function makeSelectedPizza(pizza) {
-    pizza = selectedPizzaName
+    pizza = pizzaName
     thankYou()
-    comprarIngredientes(selectedPizzaIngs[0] + ",", selectedPizzaIngs[1] + ",", selectedPizzaIngs[2] + ",", selectedPizzaIngs[3] + ",", selectedPizzaIngs[4] + ",", selectedPizzaIngs[5] + ",", selectedPizzaIngs[6] + ",", selectedPizzaIngs[7])
-    buscarFuente()
-    encenderHorno()
     extenderMasa()
     hacerSalsa()
     colocarEnLaFuente()
     anadirIngredientes()
-    cocinar()
+    hornear()
     reposar()
     cortar()
     entregar()
@@ -30,23 +28,15 @@ export function makeSelectedPizza(pizza) {
 }
 
 function thankYou() {
-    console.log(`¡Gracias por elejir nuestra pizza ${selectedPizzaName}!`)
+    console.log(`¡Gracias por elejir nuestra pizza ${pizzaName}!`)
 }
 
-function comprarIngredientes(ing1, ing2, ing3, ing4, ing5, ing6) {
-    console.log("Vamos a la tienda a comprar:", ing1, ing2, ing3, ing4, ing5, ing6)
-}
-
-function buscarFuente(){
-    console.log("Buscamos fuente del tamaño correcto")
-}
-
-function encenderHorno(){
-    console.log("Precalentamos el horno a 180 grados durante 10 min")
+function hornear(){
+    console.log("Pizza horneandose")
 }
 
 function extenderMasa(){
-    console.log("Extendemos una capa de harina sobre la mesa y extender la " + selectedPizzaIngs[6] + " con un rodillo de cocina")  
+    console.log("Extendiendo la masa")  
 }
 
 function hacerSalsa (){
@@ -56,27 +46,24 @@ function hacerSalsa (){
 }
 
 function triturarTomate (){
-    console.log("Trituramos con un rayador el " + selectedPizzaIngs[7])
+    console.log("Trituramos con un rayador el tomate")
 }
 function freirTomate(){
-    console.log("A fuego medio añadimos el " + selectedPizzaIngs[7] + " a una sartén")
+    console.log("A fuego medio añadimos el tomate a una sartén")
 }
 
 function añadirAditivos(){
-    console.log("Añadimos " + sal)
+    console.log("Añadimos una pizca de sal")
 }
+
 function colocarEnLaFuente() {
-    console.log("Ponemos en la fuente la " + selectedPizzaIngs[6])
+    console.log("Ponemos en la fuente la masa")
 }
 
 function anadirIngredientes(){
-    for (let x = 0; x < selectedPizzaIngs.length; x=x+1) {
-        console.log("Añadimos " + selectedPizzaIngs[x])
+    for (let x = 0; x < PizzaIngs.length; x=x+1) {
+        console.log("Añadimos " + PizzaIngs[x])
     }
-}
-
-function cocinar(){
-    console.log("Metemos la pizza en el horno durante 15 min")
 }
 
 function reposar(){

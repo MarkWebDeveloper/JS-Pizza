@@ -2,13 +2,15 @@ import promptSync from 'prompt-sync';
 import {makeSelectedPizza} from './modules/makePizza.js';
 
 const prompt = promptSync()
-const pizzaName = prompt("Qué pizza quiere?")
+export const pizzaName = prompt("Qué pizza quiere? ")
+export const PizzaIngs = Object.values(pizzaName)[1];
 
 if (pizzaName === '') {
-    console.log('Por favor, elija una de las pizzas. Entonces, ¿mediterranea o mediterranea?')}
+    console.log('Por favor, elija una de las pizzas: mediterranea, pepperoni, jamón y queso o cuatro quesos')
+    } else {
+        makeSelectedPizza(pizzaName)
+    }
 
-if(pizzaName === 'mediterranea'){
-    makeSelectedPizza(pizzaName)}
 
 // result.then((resolve) =>{
     
